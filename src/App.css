@@ -6,12 +6,17 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+
+li {
+  list-style: none;
+}
+
 .App, body, #root {
   width: 100%;
 }
 
 .App {
-  background-color: #212529;
+  background-color: white;
 }
 .App-header {
   height: 94px;
@@ -19,6 +24,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: .2s;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 
@@ -32,9 +41,11 @@
 
 #header-inner-container img{
   height: 2rem;
+  cursor: pointer;
+  transition: .2s;
 }
 
-#header-inner-container ul {
+#header-nav ul {
   height: 100%;
   width: 517.3px;
   display: flex;
@@ -42,6 +53,18 @@
   justify-content: space-around;
   align-items: center;
   padding-inline-start: 0px;
+}
+
+#header-nav li {
+  font-size: 0.95rem;
+  letter-spacing: 0.0625em;
+  font-weight: 400;
+  color: white;
+}
+
+#header-nav li:hover, #dropdown-nav li:hover {
+  color: #fed136;
+  cursor: pointer;
 }
 
 #header-menu-button {
@@ -55,14 +78,127 @@
   align-items: center;
   font-size: 12px;
   display: none;
+  cursor: pointer;
 }
 
-#header-inner-container li {
-  font-size: 0.95rem;
-  letter-spacing: 0.0625em;
-  font-weight: 400;
+/* ==============HEADER DROPDOWN NAV================================ */
+
+#dropdown-nav {
+  position: fixed;
+  overflow: hidden;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  background-color: #212529; 
   color: white;
+  display: flex;
+  justify-content: center;
+  transition: .5s;
 }
+
+#dropdown-nav ul {
+  width: 720px;
+  padding-inline-start: 0px;
+}
+
+#dropdown-nav li {
+  margin-bottom: 18px;
+}
+
+/* ==================WELCOME SECTION==================================== */
+
+#welcome {
+  height: 80vh;
+  width: 100%;
+  background-image: url('https://startbootstrap.github.io/startbootstrap-agency/assets/img/header-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+#welcome h2 {
+  font-size: 72px;
+  font-weight: bolder;
+  letter-spacing: .05rem;
+  margin-bottom: 64px;
+}
+
+#welcome h3 {
+  margin-bottom: 32px;
+  font-size: 36px;
+}
+
+#welcome div {
+  width: 224px;
+  height: 69px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fed136;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* ==================SERVICES SECTION==================================== */
+
+#services {
+  height: 660px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#services h3 {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+#services p {
+  margin-bottom: 64px;
+}
+
+#services-bottom {
+  display: flex;
+}
+#services-bottom div {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#services-bottom > div > * {
+  margin-bottom: 16px;
+}
+
+.service-img-container {
+  min-width: 124px;
+  min-height: 124px;
+  background-color: #fed136;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-img-container svg {
+  width: 80px;
+  color: white
+}
+
+#services-bottom h4{
+  font-size: 24px;
+}
+
+/* ================MEDIA QUERIES======================================= */
 
 @media(max-width: 1200px){
   #header-inner-container {
@@ -73,15 +209,18 @@
 @media(max-width: 991px){
   .App-header {
     height: 72px;
+    background-color: #212529;
   }
   #header-inner-container {
     width: 720px;
+    padding: 0;
   }
   #header-inner-container img {
     width: 140.42px;
     height: 24px;
+    transition: .2s;
   }
-  #header-inner-container ul {
+  #header-nav ul {
     display: none;
   }
   #header-menu-button {
