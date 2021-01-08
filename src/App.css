@@ -35,7 +35,10 @@ li {
   background-color: #212529;
 }
 
-
+.header-small img {
+  width: 140px !important;
+  cursor: pointer;
+}
 
 #header-inner-container {
   width: 1140px;
@@ -50,11 +53,6 @@ li {
   width: 187px;
   cursor: pointer;
   transition: .2s !important;
-}
-
-.img-small {
-  width: 140px !important;
-  transition: .2s;
 }
 
 #header-nav ul {
