@@ -17,20 +17,25 @@ class App extends Component {
   handleHeaderScroll() {
     const header = document.getElementById('header')
     const img = document.getElementById('header-img')
-    if (window.pageYOffset > 0) {
-      header.classList.add("header-small")
-      img.classList.add("img-small")
-    } else {
-      header.classList.remove("header-small")
-      img.classList.remove("img-small")
-    }
+    header.classList.toggle('header-small', window.pageYOffset > 0)
+    img.classList.toggle('img-small', window.pageYOffset > 0)
+    // if (window.pageYOffset > 0) {
+    //   header.classList.add("header-small")
+    //   img.classList.add("img-small")
+    // } else {
+    //   header.classList.remove("header-small")
+    //   img.classList.remove("img-small")
+    // }
   }
 
   toggleMenu = () => {
-    !this.state.menuView
-      ? this.setState({ dropdownHeight: '190px' })
-      : this.setState({ dropdownHeight: '0px' })
-    this.setState({ menuView: !this.state.menuView })
+    const nav = document.getElementById('dropdown-nav')
+    nav.classList.toggle('dropdown-nav-open')
+    nav.classList.toggle('dropdown-nav-closed')
+    // !this.state.menuView
+    //   ? this.setState({ dropdownHeight: '190px' })
+    //   : this.setState({ dropdownHeight: '0px' })
+    // this.setState({ menuView: !this.state.menuView })
   }
 
   render() {
@@ -49,7 +54,7 @@ class App extends Component {
               </ul>
               <div id="header-menu-button" onClick={this.toggleMenu}>MENU</div>
             </nav>
-            <nav id="dropdown-nav" style={{ height: `${this.state.dropdownHeight}` }}>
+            <nav id="dropdown-nav" className="dropdown-nav-closed">
               <ul>
                 <li>SERVICES</li>
                 <li>PORTFOLIO</li>

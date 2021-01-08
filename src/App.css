@@ -107,6 +107,14 @@ li {
   transition: .5s;
 }
 
+.dropdown-nav-closed {
+  height: 0;
+}
+
+.dropdown-nav-open {
+  height: 190px;
+}
+
 #dropdown-nav ul {
   width: 720px;
   padding-inline-start: 0px;
